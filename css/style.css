@@ -1,0 +1,22 @@
+/* ===== 全体 ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+/* ===== 地図 ===== */
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+/* スマホでは地図の高さを抑える */
+@media (max-width: 576px) {
+  #map {
+    height: 350px;
+  }
+}

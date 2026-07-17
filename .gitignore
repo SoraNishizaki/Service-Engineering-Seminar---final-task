@@ -1,0 +1,8 @@
+# Claude 関連
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.claude.json
+
+# macOS
+.DS_Store
