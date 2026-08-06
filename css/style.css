@@ -1,22 +1,91 @@
-/* ===== 全体 ===== */
+/* ===== General ===== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ===== 地図 ===== */
+/* ===== Section headings ===== */
+.section-title {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #0d6efd;
+  border-radius: 2px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 55%, #475569 100%);
+}
+
+/* ===== Sensor colors ===== */
+:root {
+  --sensor-radar: #7c3aed;
+  --sensor-pir: #f97316;
+  --sensor-door: #0ea5e9;
+}
+
+.sensor-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* ===== Map ===== */
 #map {
   height: 500px;
   width: 100%;
 }
 
-/* スマホでは地図の高さを抑える */
 @media (max-width: 576px) {
   #map {
     height: 350px;
   }
+}
+
+/* Custom Leaflet divIcon markers */
+.site-marker__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.35);
+  font-size: 0.95rem;
+}
+
+.site-popup__badge {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ===== Site cards ===== */
+.site-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }

@@ -1,39 +1,43 @@
-# サービス工学特論 Final Task
+# IoT Elderly Watch-over System — Deployment Map
 
-Bootstrap 5 と Leaflet を使用した Web サイト（GitHub Pages で公開予定）。
-現在は基盤のみで、サイトの内容は検討中。
+Final task for Advanced Service Engineering. An interactive Bootstrap + Leaflet
+web page mapping real-world pilot deployments of a non-contact, mmWave-radar-based
+elderly watch-over research project, hosted on GitHub Pages.
 
-## 構成
+Live site: https://soranishizaki.github.io/Service-Engineering-Seminar---final-task/
+
+## Structure
 
 ```
 .
-├── index.html      # メインページ（Bootstrap + Leaflet の読み込みと動作確認）
+├── index.html      # Main page (navbar, hero, sensor strip, map, site cards, about, footer)
 ├── css/
-│   └── style.css   # 自作 CSS
+│   └── style.css   # Custom CSS (hero gradient, sensor colors, card hover, marker styling)
 ├── js/
-│   └── main.js     # Leaflet マップの初期化
+│   ├── data.js     # Deployment site + sensor type data (single source of truth)
+│   └── main.js     # Leaflet map init, markers/circles/layers, dynamic cards
 └── README.md
 ```
 
-## 使用技術
+## Stack
 
-| 項目 | 内容 |
+| Item | Details |
 | --- | --- |
-| CSS フレームワーク | Bootstrap 5.3（CDN） |
-| アイコン | Bootstrap Icons |
-| 地図ライブラリ | Leaflet 1.9（CDN） |
-| 地図タイル | OpenStreetMap |
-| ホスティング | GitHub Pages |
+| CSS framework | Bootstrap 5.3 (CDN) |
+| Icons | Bootstrap Icons |
+| Map library | Leaflet 1.9 (CDN) |
+| Map tiles | OpenStreetMap |
+| Hosting | GitHub Pages |
 
-## GitHub Pages での公開手順
+## Deploying to GitHub Pages
 
-1. リポジトリの **Settings → Pages** を開く
-2. **Source: Deploy from a branch / Branch: main / (root)** を選択して Save
-3. 数分後に `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開される
+1. Open the repository's **Settings → Pages**
+2. Select **Source: Deploy from a branch / Branch: main / (root)** and Save
+3. The site is published at `https://<username>.github.io/<repo>/` within a few minutes
 
-## ローカルでの確認
+## Running locally
 
 ```sh
 python3 -m http.server 8765
-# http://localhost:8765 をブラウザで開く
+# open http://localhost:8765 in a browser
 ```
